@@ -206,11 +206,7 @@
       </div>
       <div class="modal-body">
         <div style="color: black;" class="container" id="eventdaycontainer">
-          <div class="col eventsofday" id="777" style="display: none;">
-            <label>gregergg</label>
-            <button class="eventdaybutton">Delete</button>
-            <button class="eventdaybutton" onclick="editEvent(this.parentNode)">Edit</button>
-          </div>
+          
         </div>
       </div>
       <div class="modal-footer">
@@ -237,26 +233,30 @@
 
     function getList(elem){
       var container = document.getElementById("eventdaycontainer");
+      var containerchild = container.children;
       var childs = elem.children;
       var i;
-      for(i=0;i<childs.length;i++){
-        var div = document.createElement('div');
-        div.className = "col eventsofday";
-        div.id = childs[i].id;
-        var content = document.createElement('label');
-        content.innerHTML = childs[i].innerHTML;
-        var edit = document.createElement('button');
-        var deleteevent = document.createElement('button');
-        edit.textContent = " Edit";
-        deleteevent.textContent = " Delete";
-        edit.className = "eventdaybutton";
-        deleteevent.className = "eventdaybutton";
-        edit.setAttribute("onclick","editEvent(this.parentNode)");
+      if(containerchild.length ==0){
 
-        div.appendChild(content);
-        div.appendChild(deleteevent);
-        div.appendChild(edit);
-        container.appendChild(div);
+        for(i=0;i<childs.length;i++){
+          var div = document.createElement('div');
+          div.className = "col eventsofday";
+          div.id = childs[i].id;
+          var content = document.createElement('label');
+          content.innerHTML = childs[i].innerHTML;
+          var edit = document.createElement('button');
+          var deleteevent = document.createElement('button');
+          edit.textContent = " Edit";
+          deleteevent.textContent = " Delete";
+          edit.className = "eventdaybutton";
+          deleteevent.className = "eventdaybutton";
+          edit.setAttribute("onclick","editEvent(this.parentNode)");
+
+          div.appendChild(content);
+          div.appendChild(deleteevent);
+          div.appendChild(edit);
+          container.appendChild(div);
+        }
       }
       console.log(childs[0].textContent); 
     }
