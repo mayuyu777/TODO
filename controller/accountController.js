@@ -23,7 +23,7 @@ exports.createAccount = async(req,res)=>{
 
 exports.checkauth = async(req,res)=>{
     if(req.session.uid){
-       // res.redirect("/todo");
+       // res.redirect("/");
     }else{
         res.redirect("/login");
     }

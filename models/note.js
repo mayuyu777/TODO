@@ -25,11 +25,7 @@ const note = instance.sequelize.define("notes",{
         type: DataTypes.DATE,
         allowNull:false
       },
-      time_start:{
-        type: DataTypes.TIME,
-        allowNull:false
-      },
-      time_end:{
+      time:{
         type: DataTypes.TIME,
         allowNull:false
       }
